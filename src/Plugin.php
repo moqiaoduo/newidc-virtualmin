@@ -58,7 +58,7 @@ class Plugin extends Server
     {
         $result = $this->exec('disable-domain', [
             'why' => $this->service->extra['suspend_reason'],
-            'domain' => $this->server->domain
+            'domain' => $this->service->domain
         ]);
         if (!isset($result['status']) || $result['status'] != 'success') {
             return ['code' => 1, 'msg' => $result['error'] ?? '未知错误'];
@@ -73,7 +73,7 @@ class Plugin extends Server
     public function unsuspend()
     {
         $result = $this->exec('enable-domain', [
-            'domain' => $this->server->domain
+            'domain' => $this->service->domain
         ]);
         if (!isset($result['status']) || $result['status'] != 'success') {
             return ['code' => 1, 'msg' => $result['error'] ?? '未知错误'];
