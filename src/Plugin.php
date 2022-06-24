@@ -41,10 +41,7 @@ class Plugin extends Server
             'user' => $this->service->username,         // 虽然可以不填但是会跟系统不一样，所以还是填一下好
             'pass' => $this->service->password,         // 必填
             'desc' => 'NewIDC #' . $this->service->id,  // 选填
-            'unix' => '',   // 后面value都留空，表示option
-            'dir' => '',
-            'webmin' => '',
-            'web' => '',
+            'features-from-plan' => '',   // 后面value都留空，表示option
             'limits-from-plan' => ''
         ]);
         if (!isset($result['status']) || $result['status'] != 'success') {
