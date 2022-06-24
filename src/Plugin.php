@@ -88,7 +88,7 @@ class Plugin extends Server
     public function terminate()
     {
         $result = $this->exec('delete-domain', [
-            'user' => $this->server->username
+            'user' => $this->service->username
         ]);
         if (!isset($result['status']) || $result['status'] != 'success') {
             return ['code' => 1, 'msg' => $result['error'] ?? '未知错误'];
@@ -103,7 +103,7 @@ class Plugin extends Server
     public function changePassword($password)
     {
         $result = $this->exec('modify-domain', [
-            'domain' => $this->server->domain,
+            'domain' => $this->service->domain,
             'pass' => $password
         ]);
         if (!isset($result['status']) || $result['status'] != 'success') {
