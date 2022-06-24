@@ -5,7 +5,7 @@
     "newidc/plugin": "^0.5",
     "ext-curl": "*",
     "ext-json": "*",
-    "guzzlehttp/guzzle": "^7.0"
+    "guzzlehttp/guzzle": "^6.5"
   },
   "require-dev": {
     "phpunit/phpunit": "^8.5"
